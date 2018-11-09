@@ -1,0 +1,11 @@
+<ul>
+{% for nav_item in nav %}
+  {% if not nav_item.children %}
+    {% if nav_item.title not in ['ホーム'] %}
+      <li>
+        <a href="{{ nav_item.url | url }}">{{ nav_item.title }}</a>
+      </li>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+</ul>

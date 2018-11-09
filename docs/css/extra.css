@@ -1,0 +1,8 @@
+.md-footer-nav {
+  display: none;
+}
+
+td.date {
+  background: rgba(236, 236, 236, 0.5) !important;
+  color: #37474F !important;
+}

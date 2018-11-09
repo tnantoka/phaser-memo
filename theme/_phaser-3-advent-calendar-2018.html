@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>日付</th>
+      <th>タイトル</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% set days = ['土', '日', '月', '火', '水', '木', '金'] %}
+    {% for nav_item in nav %}
+      {% if nav_item.title == 'phaser-3-advent-calendar-2018' %}
+        {% for nav_item in nav_item.children %}
+          <tr>
+            <td class="date"><strong>12/{{ loop.index }}({{ days[loop.index0 % 7] }})</strong></td>
+            <td><a href="/{{ nav_item.url | url }}">{{ nav_item.title }}</a></td>
+          </tr>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
+

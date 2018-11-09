@@ -1,9 +1,15 @@
-site_name: My Docs
+site_name: jsgame.info
+site_description: 
+site_author: tnantoka
+site_url: https://jsgame.info/
 
-copyright: 'Copyright &copy; 2018 tnantoka'
+copyright: Copyright &copy; 2018 tnantoka
 
 extra_css:
   - css/extra.css
+extra_javascript:
+  - js/jquery-3.3.1.min.js
+  - js/extra.js
 
 theme:
   name: material
@@ -12,10 +18,43 @@ theme:
   logo:
     icon: home
   language: ja
+  feature:
+    tabs: true
+  custom_dir: theme
+  favicon: ''
+  static_templates:
+    - _index.html
+    - _phaser-3-advent-calendar-2018.html
+
+google_analytics:
+  - UA-128368198-1
+  - auto
 
 extra:
   social:
     - type: github
-      link: https://github.com/tnantoka
+      link: https://github.com/tnantoka/jsgame.info
     - type: twitter
       link: https://twitter.com/tnantoka
+  disqus: jsgame-info
+
+markdown_extensions:
+  - codehilite:
+      linenums: false
+
+ad: !!python/object/apply:os.getenv ["AD"]
+
+nav:
+  - 'ホーム': index.md
+  - '人気のフレームワーク・ゲームエンジン': frameworks.md
+  - 'Phaser 3 アドベントカレンダー2018': phaser-3-advent-calendar-2018/index.md
+  - phaser-3-advent-calendar-2018:
+    - 'Hello Phaser 3!': 'phaser-3-advent-calendar-2018/2018-12-01/index.md'
+    - '2018-12-02': 'phaser-3-advent-calendar-2018/2018-12-02/index.md'
+    - '2018-12-03': 'phaser-3-advent-calendar-2018/2018-12-03/index.md'
+    - '2018-12-04': 'phaser-3-advent-calendar-2018/2018-12-04/index.md'
+    - '2018-12-05': 'phaser-3-advent-calendar-2018/2018-12-05/index.md'
+    - '2018-12-06': 'phaser-3-advent-calendar-2018/2018-12-06/index.md'
+    - '2018-12-07': 'phaser-3-advent-calendar-2018/2018-12-07/index.md'
+    - '2018-12-08': 'phaser-3-advent-calendar-2018/2018-12-08/index.md'
+      
