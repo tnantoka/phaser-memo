@@ -10,7 +10,7 @@ Phaserはバージョン2もメンテが継続されており、公式サイト�
 
 公式のソースコードはインデントが4つで少し気になったので、2つに変換したものを以下に置いておきます。
 
-```js
+```
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,13 +74,13 @@ Phaserはバージョン2もメンテが継続されており、公式サイト�
 
 保存したHTMLをブラウザで開けば、Phaserのロゴがパーティクルと共に動き回るゲームが見れるはずです。
 
-![](/img/hello-phaser.gif)
+![](hello-phaser.gif)
 
 このソースコードでは画像をPhaserのサイトから取ってきているのでHTMLファイルを直接開いても動きますが、PhaserのゲームはHTTPサーバー上で動かすことが想定されています。
 
 MacやLinuxであれば以下のようなコマンドでサーバーを起動することができます。
 
-```sh
+```
 $ python -m http.server 8080
 $ php -S localhost:8080
 $ ruby -run -e httpd . -p 8080

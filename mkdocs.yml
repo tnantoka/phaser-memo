@@ -1,7 +1,7 @@
-site_name: jsgame.info
+site_name: Phaser Memo
 site_description: 
 site_author: tnantoka
-site_url: https://jsgame.info/
+site_url: https://tnantoka.github.io/phaser-memo/
 
 copyright: Copyright &copy; 2018 tnantoka
 
@@ -33,10 +33,10 @@ google_analytics:
 extra:
   social:
     - type: github
-      link: https://github.com/tnantoka/jsgame.info
+      link: https://github.com/tnantoka/phaser-memo
     - type: twitter
       link: https://twitter.com/tnantoka
-  disqus: jsgame-info
+  disqus: !!python/object/apply:os.getenv ["DISQUS"]
 
 markdown_extensions:
   - codehilite:
@@ -50,11 +50,27 @@ nav:
   - 'Phaser 3 アドベントカレンダー2018': phaser-3-advent-calendar-2018/index.md
   - phaser-3-advent-calendar-2018:
     - 'Hello Phaser 3!': 'phaser-3-advent-calendar-2018/2018-12-01/index.md'
-    - '2018-12-02': 'phaser-3-advent-calendar-2018/2018-12-02/index.md'
-    - '2018-12-03': 'phaser-3-advent-calendar-2018/2018-12-03/index.md'
-    - '2018-12-04': 'phaser-3-advent-calendar-2018/2018-12-04/index.md'
-    - '2018-12-05': 'phaser-3-advent-calendar-2018/2018-12-05/index.md'
-    - '2018-12-06': 'phaser-3-advent-calendar-2018/2018-12-06/index.md'
-    - '2018-12-07': 'phaser-3-advent-calendar-2018/2018-12-07/index.md'
-    - '2018-12-08': 'phaser-3-advent-calendar-2018/2018-12-08/index.md'
-      
+    - 'Phaser 3でどんなゲームが作れるか': 'phaser-3-advent-calendar-2018/2018-12-02/index.md'
+    - 'モダンなJSでPhaserしたい': 'phaser-3-advent-calendar-2018/2018-12-03/index.md'
+    - '公式チュートリアルをやる その1': 'phaser-3-advent-calendar-2018/2018-12-04/index.md'
+    - '公式チュートリアルをやる その2': 'phaser-3-advent-calendar-2018/2018-12-05/index.md'
+    - '公式チュートリアルをやる その3': 'phaser-3-advent-calendar-2018/2018-12-06/index.md'
+    - '参考資料': 'phaser-3-advent-calendar-2018/2018-12-07/index.md'
+    - 'ゲームの中央表示・自動リサイズ': 'phaser-3-advent-calendar-2018/2018-12-08/index.md'
+    - '複数のシーン': 'phaser-3-advent-calendar-2018/2018-12-09/index.md'
+    - 'テキスト': 'phaser-3-advent-calendar-2018/2018-12-10/index.md'
+    - 'ボタン': 'phaser-3-advent-calendar-2018/2018-12-11/index.md'
+    - '画像': 'phaser-3-advent-calendar-2018/2018-12-12/index.md'
+    - '2018-12-': 'phaser-3-advent-calendar-2018/2018-12-13/index.md'
+    - '2018-12-': 'phaser-3-advent-calendar-2018/2018-12-14/index.md'
+    - '2018-12-': 'phaser-3-advent-calendar-2018/2018-12-15/index.md'
+    - '2018-12-': 'phaser-3-advent-calendar-2018/2018-12-16/index.md'
+    - '2018-12-': 'phaser-3-advent-calendar-2018/2018-12-17/index.md'
+    - '2018-12-': 'phaser-3-advent-calendar-2018/2018-12-18/index.md'
+    - '2018-12-': 'phaser-3-advent-calendar-2018/2018-12-19/index.md'
+    - '2018-12-': 'phaser-3-advent-calendar-2018/2018-12-20/index.md'
+    - '2018-12-': 'phaser-3-advent-calendar-2018/2018-12-21/index.md'
+    - '2018-12-': 'phaser-3-advent-calendar-2018/2018-12-22/index.md'
+    - '2018-12-': 'phaser-3-advent-calendar-2018/2018-12-23/index.md'
+    - '2018-12-': 'phaser-3-advent-calendar-2018/2018-12-24/index.md'
+    - '2018-12-': 'phaser-3-advent-calendar-2018/2018-12-25/index.md'
