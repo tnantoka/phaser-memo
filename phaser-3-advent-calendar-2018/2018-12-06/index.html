@@ -1,0 +1,562 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://tnantoka.github.io/phaser-memo/phaser-3-advent-calendar-2018/2018-12-06/">
+      
+      
+        <meta name="author" content="tnantoka">
+      
+      
+        <meta name="lang:clipboard.copy" content="クリップボードへコピー">
+      
+        <meta name="lang:clipboard.copied" content="コピーしました">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="何も見つかりませんでした">
+      
+        <meta name="lang:search.result.one" content="1件見つかりました">
+      
+        <meta name="lang:search.result.other" content="#件見つかりました">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
+      
+      <link rel="shortcut icon" href="../..">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.6">
+    
+    
+      
+        <title>公式チュートリアルをやる その3 - Phaser Memo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://tnantoka.github.io/phaser-memo/" title="Phaser Memo" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">home</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                <a href="/">Phaser Memo</a>
+              </span>
+              <span class="md-header-nav__topic">
+                公式チュートリアルをやる その3
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            検索キーワードを入力してください
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="ホーム" class="md-tabs__link">
+        ホーム
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../" title="Phaser 3 アドベントカレンダー2018" class="md-tabs__link">
+        Phaser 3 アドベントカレンダー2018
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../2018-12-01/" title="phaser-3-advent-calendar-2018" class="md-tabs__link md-tabs__link--active">
+          phaser-3-advent-calendar-2018
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="ホーム" class="md-nav__link">
+      ホーム
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../../frameworks/" title="人気のフレームワーク・ゲームエンジン" class="md-nav__link">
+      人気のフレームワーク・ゲームエンジン
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Phaser 3 アドベントカレンダー2018" class="md-nav__link">
+      Phaser 3 アドベントカレンダー2018
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="星" class="md-nav__link">
+    星
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="スコア" class="md-nav__link">
+    スコア
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="ボム" class="md-nav__link">
+    ボム
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>公式チュートリアルをやる その3</h1>
+                
+                <p><a href="../2018-12-05">前回</a>まででプレイヤーが操作できるようになりました。
+今回は<a href="http://phaser.io/tutorials/making-your-first-phaser-3-game/part8">Making your first Phaser 3 gameの8回目</a>から最後までやってしまいます。</p>
+<h2 id="_1">星</h2>
+<p><code>create</code>で星を追加します。</p>
+<div class="codehilite"><pre><span></span>  const stars = this.physics.add.group({
+    key: &#39;star&#39;,
+    repeat: 11,
+    setXY: { x: 12, y: 0, stepX: 70 }
+  });
+
+  stars.children.iterate(function (child) {
+    child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
+  });
+
+  this.physics.add.collider(stars, platforms);
+</pre></div>
+
+
+<p><code>setXY</code>でx座標を70ずつ進めて11個置きます。
+また、<code>setBounceY</code>で弾みをランダムに変えます。
+<code>collider</code>はプレイヤーと同じく床と衝突するようにしています。</p>
+<p>さらに、<code>overlap</code>によりプレイヤーと星が重なった時の処理を指定します。
+1つ目と2つ目の引数で対象を指定します。
+3つ目は<code>collideCallback(object1, object2)</code>で実際に処理をする関数です。
+4つ目の引数は<code>processCallback(object1, object2)</code>で<code>true</code>を返したときだけ第3引数の<code>collideCallback</code>が呼ばれます。今回はnullにしているので常に<code>collideCallback</code>が呼ばれます。
+5つ目は<code>callbackContext</code>で<code>callback</code>を実行するコンテキストです。</p>
+<div class="codehilite"><pre><span></span>  this.physics.add.overlap(player, stars, collectStar, null, this);
+</pre></div>
+
+
+<p><code>collectStar</code>では、プレイヤーと重なった星のボディーを無効化して、オブジェクトを非表示にしています。</p>
+<div class="codehilite"><pre><span></span><span class="kd">function</span> <span class="nx">collectStar</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">star</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">star</span><span class="p">.</span><span class="nx">disableBody</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>これで星を取れるようになりました。</p>
+<p><img alt="" src="phaser-first-game-7.png" /></p>
+<h2 id="_2">スコア</h2>
+<p>星を取った時にスコアが加算されるようにします。</p>
+<p>スコアの計算用の変数と、スコアを表示するテキストのオブジェクトを入れる変数を用意します。</p>
+<div class="codehilite"><pre><span></span>let score = 0;
+let scoreText;
+</pre></div>
+
+
+<p><code>create</code>の中でテキストオブジェクトを追加します。
+フォントはデフォルトで<code>Courier</code>が使われます。</p>
+<div class="codehilite"><pre><span></span>  <span class="nt">scoreText</span> <span class="o">=</span> <span class="nt">this</span><span class="p">.</span><span class="nc">add</span><span class="p">.</span><span class="nc">text</span><span class="o">(</span><span class="nt">16</span><span class="o">,</span> <span class="nt">16</span><span class="o">,</span> <span class="s1">&#39;score: 0&#39;</span><span class="o">,</span> <span class="p">{</span> <span class="n">fontSize</span><span class="p">:</span> <span class="s1">&#39;32px&#39;</span><span class="p">,</span> <span class="kc">fill</span><span class="o">:</span> <span class="s1">&#39;#000&#39;</span> <span class="p">}</span><span class="o">);</span>
+</pre></div>
+
+
+<p><code>collectStar</code>でスコアを更新します。</p>
+<div class="codehilite"><pre><span></span>  <span class="nt">score</span> <span class="o">+=</span> <span class="nt">10</span><span class="o">;</span>
+  <span class="nt">scoreText</span><span class="p">.</span><span class="nc">setText</span><span class="o">(</span><span class="s1">&#39;Score: &#39;</span> <span class="o">+</span> <span class="nt">score</span><span class="o">);</span>
+</pre></div>
+
+
+<p>得点が表示されるようになりました。</p>
+<p><img alt="" src="phaser-first-game-8.png" /></p>
+<h2 id="_3">ボム</h2>
+<p>最後の仕上げです。
+星を全部取ったら星を再表示すると同時に動き回るボムを追加します。
+ボムに当たるとゲームオーバーです。</p>
+<p>ボムを入れる変数と、星を入れる変数を用意します。</p>
+<div class="codehilite"><pre><span></span>let bombs;
+let stars;
+</pre></div>
+
+
+<p><code>create</code>で定義している<code>stars</code>の<code>const</code>を取り除きます。</p>
+<div class="codehilite"><pre><span></span>  stars = this.physics.add.group({
+    key: &#39;star&#39;,
+    repeat: 11,
+    setXY: { x: 12, y: 0, stepX: 70 }
+  });
+</pre></div>
+
+
+<p>ボムを追加します。
+ボムは地面とプレイヤーと衝突します。
+プレイヤーと衝突した時の処理は<code>hitBomb</code>で行ないます。</p>
+<div class="codehilite"><pre><span></span>  bombs = this.physics.add.group();
+  this.physics.add.collider(bombs, platforms);
+  this.physics.add.collider(player, bombs, hitBomb, null, this);
+</pre></div>
+
+
+<p><code>hitBomb</code>では物理演算を止め、プレイヤーを赤色にしてアニメーションを<code>turn</code>にします。</p>
+<div class="codehilite"><pre><span></span><span class="kd">function</span> <span class="nx">hitBomb</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">bomb</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">pause</span><span class="p">();</span>
+
+  <span class="nx">player</span><span class="p">.</span><span class="nx">setTint</span><span class="p">(</span><span class="mh">0xff0000</span><span class="p">);</span>
+  <span class="nx">player</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="s1">&#39;turn&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>最後に<code>collectStar</code>でボムを表示させます。
+アクティブな星が1つもなくなった場合、星のボディーを全部有効化し、位置や速度が毎回違うボムを追加します。</p>
+<div class="codehilite"><pre><span></span>  if (stars.countActive(true) === 0) {
+    stars.children.iterate(function (child) {
+      child.enableBody(true, child.x, 0, true, true);
+    });
+
+    var x = (player.x &lt; 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
+
+    var bomb = bombs.create(x, 16, &#39;bomb&#39;);
+    bomb.setBounce(1);
+    bomb.setCollideWorldBounds(true);
+    bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
+    bomb.allowGravity = false;
+  }
+}
+</pre></div>
+
+
+<p>これでゲームオーバーにならない限り続けて遊べるようになりました。</p>
+<p><img alt="" src="phaser-first-game-9.png" /></p>
+<p>最初のゲーム作成は以上です。</p>
+<p>画像やルールを変更して自分なりのゲームにしてみるのもよいでしょう。</p>
+<p>完成したソースコードは<a href="https://github.com/tnantoka/phaser-first-game">https://github.com/tnantoka/phaser-first-game</a>で公開しています。</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../2018-12-05/" title="公式チュートリアルをやる その2" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前
+                </span>
+                公式チュートリアルをやる その2
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../2018-12-07/" title="参考資料" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  次
+                </span>
+                参考資料
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 tnantoka
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/tnantoka/phaser-memo" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/tnantoka" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.5e60981f.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../js/jquery-3.3.1.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-128368198-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>

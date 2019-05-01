@@ -1,0 +1,456 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://tnantoka.github.io/phaser-memo/phaser-3-advent-calendar-2018/2018-12-09/">
+      
+      
+        <meta name="author" content="tnantoka">
+      
+      
+        <meta name="lang:clipboard.copy" content="クリップボードへコピー">
+      
+        <meta name="lang:clipboard.copied" content="コピーしました">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="何も見つかりませんでした">
+      
+        <meta name="lang:search.result.one" content="1件見つかりました">
+      
+        <meta name="lang:search.result.other" content="#件見つかりました">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
+      
+      <link rel="shortcut icon" href="../..">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.6">
+    
+    
+      
+        <title>複数のシーン - Phaser Memo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://tnantoka.github.io/phaser-memo/" title="Phaser Memo" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">home</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                <a href="/">Phaser Memo</a>
+              </span>
+              <span class="md-header-nav__topic">
+                複数のシーン
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            検索キーワードを入力してください
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="ホーム" class="md-tabs__link">
+        ホーム
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../" title="Phaser 3 アドベントカレンダー2018" class="md-tabs__link">
+        Phaser 3 アドベントカレンダー2018
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../2018-12-01/" title="phaser-3-advent-calendar-2018" class="md-tabs__link md-tabs__link--active">
+          phaser-3-advent-calendar-2018
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="ホーム" class="md-nav__link">
+      ホーム
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../../frameworks/" title="人気のフレームワーク・ゲームエンジン" class="md-nav__link">
+      人気のフレームワーク・ゲームエンジン
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Phaser 3 アドベントカレンダー2018" class="md-nav__link">
+      Phaser 3 アドベントカレンダー2018
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>複数のシーン</h1>
+                
+                <p>これまで作ったゲームは1つのシーンしかありませんでしたが、通常ゲームはタイトル・プレイ・結果など複数のシーンで構成されます。</p>
+<p>今回はPhaserに2つのシーンを登録し、遷移させてみます。</p>
+<p>いつも通りプロジェクトを作成します。</p>
+<div class="codehilite"><pre><span></span>$ git clone git@github.com:tnantoka/hello-phaser-webpack.git phaser-scenes
+$ <span class="nb">cd</span> phaser-scenes
+$ yarn install
+</pre></div>
+
+
+<p>シーンを入れるディレクトリを用意します。</p>
+<div class="codehilite"><pre><span></span>$ mkdir src/scenes
+</pre></div>
+
+
+<p><code>src/scenes/LoadingScene.js</code>にローディング表示するシーンを作ります。</p>
+<div class="codehilite"><pre><span></span><span class="nt">export</span> <span class="nt">default</span> <span class="nt">class</span> <span class="nt">LoadingScene</span> <span class="nt">extends</span> <span class="nt">Phaser</span><span class="p">.</span><span class="nc">Scene</span> <span class="p">{</span>
+  <span class="err">constructor()</span> <span class="err">{</span>
+    <span class="err">super(&#39;Loading&#39;)</span>
+  <span class="p">}</span>
+
+  <span class="nt">create</span><span class="o">()</span> <span class="p">{</span>
+    <span class="err">this.add.text(16,</span> <span class="err">16,</span> <span class="err">&#39;Loading...&#39;,</span> <span class="err">{</span> <span class="n">fontSize</span><span class="p">:</span> <span class="s1">&#39;32px&#39;</span><span class="p">,</span> <span class="kc">fill</span><span class="o">:</span> <span class="s1">&#39;#fff&#39;</span> <span class="p">}</span><span class="o">);</span>
+    <span class="nt">setTimeout</span><span class="o">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="err">this.scene.start(&#39;Game&#39;)</span><span class="p">;</span>
+    <span class="p">}</span><span class="o">,</span> <span class="nt">5000</span><span class="o">);</span>
+  <span class="err">}</span>
+<span class="err">}</span>
+</pre></div>
+
+
+<p><code>constructor</code>ではそのシーンの識別子となる情報を<code>super</code>に渡します。
+<code>create</code>はこれまで<code>config</code>の<code>scene</code>に与えていた<code>create</code>と同じく、シーン作成時に行われる処理です。</p>
+<p>ここでは<code>Loading...</code>を表示して5秒後に<code>Game</code>とキーを持つシーンを呼び出しています。</p>
+<p><code>src/scenes/GameScene.js</code>にゲームプレイ用のシーンを作ります。（といっても文字を表示するだけですが）</p>
+<div class="codehilite"><pre><span></span><span class="nt">export</span> <span class="nt">default</span> <span class="nt">class</span> <span class="nt">GameScene</span> <span class="nt">extends</span> <span class="nt">Phaser</span><span class="p">.</span><span class="nc">Scene</span> <span class="p">{</span>
+  <span class="err">constructor()</span> <span class="err">{</span>
+    <span class="err">super(&#39;Game&#39;)</span>
+  <span class="p">}</span>
+
+  <span class="nt">create</span><span class="o">()</span> <span class="p">{</span>
+    <span class="err">this.add.text(16,</span> <span class="err">16,</span> <span class="err">&#39;Game</span> <span class="err">Start!&#39;,</span> <span class="err">{</span> <span class="n">fontSize</span><span class="p">:</span> <span class="s1">&#39;32px&#39;</span><span class="p">,</span> <span class="kc">fill</span><span class="o">:</span> <span class="s1">&#39;#fff&#39;</span> <span class="p">}</span><span class="o">);</span>
+  <span class="err">}</span>
+<span class="err">}</span>
+</pre></div>
+
+
+<p>これらを<code>src/index.js</code>から利用します。</p>
+<p>まずはインポートします。</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">LoadingScene</span> <span class="nn">from</span> <span class="s1">&#39;./scenes/LoadingScene&#39;</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">GameScene</span> <span class="nn">from</span> <span class="s1">&#39;./scenes/GameScene&#39;</span><span class="p">;</span>
+</pre></div>
+
+
+<p>そして、<code>config</code>に配列として渡します。
+（クラス外に定義してある<code>preload</code>や<code>create</code>は使わないので消してしまっても大丈夫です。）</p>
+<div class="codehilite"><pre><span></span>  scene: [LoadingScene, GameScene],
+</pre></div>
+
+
+<p>これで複数シーンで構成されるゲームになりました。</p>
+<p><img alt="" src="loading.png" /></p>
+<p><img alt="" src="game.png" /></p>
+<p>ソースコードはこちらです。</p>
+<p><a href="https://github.com/tnantoka/phaser-scenes">https://github.com/tnantoka/phaser-scenes</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../2018-12-08/" title="ゲームの中央表示・自動リサイズ" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前
+                </span>
+                ゲームの中央表示・自動リサイズ
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../2018-12-10/" title="テキスト" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  次
+                </span>
+                テキスト
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 tnantoka
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/tnantoka/phaser-memo" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/tnantoka" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.5e60981f.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../js/jquery-3.3.1.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-128368198-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>
