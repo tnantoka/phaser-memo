@@ -12,7 +12,7 @@
         {% for nav_item in nav_item.children %}
           <tr>
             <td class="date"><strong>12/{{ loop.index }}({{ days[loop.index0 % 7] }})</strong></td>
-            <td><a href="/{{ nav_item.url | url }}">{{ nav_item.title }}</a></td>
+            <td><a href="/phaser-memo/{{ nav_item.url | url }}">{{ nav_item.title }}</a></td>
           </tr>
         {% endfor %}
       {% endif %}
